@@ -1,0 +1,13 @@
+@* FunFact-View: Shows create-button and funfact*@
+
+@model StarWarsApp.Models.Funfact
+
+<h1>Funfacts</h1>
+
+<p>Ready To learn a new fun fact about you Star Wars?</p>
+<a href="/Funfacts/Create" class="btn">Always!</a>
+
+@if (Model.fact != null)
+{
+    <p>@Model.fact</p>
+}

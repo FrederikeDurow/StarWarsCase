@@ -1,0 +1,40 @@
+@* Index-View: Shows current Starship list, Nr. of crew members, and possible actions.*@
+@model List<StarWarsApp.Models.Spaceship>
+
+<h1>Spaceships</h1>
+
+<table>
+    <tr>
+        @* <th>ID</th> *@
+        <th>Name</th>
+        <th>Crew</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var spaceship in Model)
+    {
+        <tr>
+            @* <td>@spaceship.Id</td> *@
+            <td>@spaceship.Name</td>
+            <td style="text-align: right;">@spaceship.Crewmembers</td>
+            <td>
+                <a href="/Spaceships/Delete/@spaceship.Id" class="smallbtn">Delete</a> 
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="SpaceshipButtonContainer">
+    <a href="/Spaceships/Create" class="btn">Add Spaceship </a>
+    <a id="sortButton" href="/Spaceships/Sort" class="btn">Sort</a>
+</div>
+
+
+<h2>Total number of Crew Members</h2>
+@if (Model.Any())
+{
+    <p>@Model.First().AllCrewMembers</p>
+}
+else
+{
+    <p>No Spaceships added to list yet.</p>
+}

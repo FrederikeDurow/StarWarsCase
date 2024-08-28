@@ -1,0 +1,12 @@
+@* Delet-View: Currently Not Used *@
+@model StarWarsApp.Models.Spaceship
+
+<h1>Delete Spaceship</h1>
+
+<p>Are you sure you want to delete the spaceship?</p>
+
+<form method="post" action="/Spaceships/Delete/@Model.Id">
+    <button type="submit">Delete</button>
+</form>
+
+<a href="/Spaceships">Cancel</a>

@@ -1,0 +1,17 @@
+@* Create-View: Let's user insert Ship Name *@
+
+@model StarWarsApp.Models.Spaceship
+
+<h1>Create Spaceship</h1>
+
+<form method="post" action="/Spaceships/Create">
+
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="Name" required />
+    <br />
+
+    <div class="SpaceshipButtonContainer">
+        <button type="submit" class="btn">Create</button>
+    </div>
+</form>
